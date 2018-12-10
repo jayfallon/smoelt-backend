@@ -2,6 +2,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { randomBytes } = require("crypto");
 const { promisify } = require("util");
+const { hasPermission } = require("../utils");
 const { transport, makeANiceEmail } = require("../mail");
 
 const Mutations = {
@@ -166,6 +167,37 @@ const Mutations = {
 		});
 		// return new user
 		return updatedUser;
+	},
+	async updatePermissions(parent, args, ctx, info) {
+		// check if they are looged in
+		if (!ctx.request.userId) {
+			throw new Error("You must be logged in!");
+		}
+		// check curren tuser
+		const currentUser = await ctx.db.query.user(
+			{
+				where: {
+					id: ctx.request.userId,
+				},
+			},
+			info
+		);
+		// check their peremissioms
+		hasPermission(currentUser, ["ADMIN", "PERMISSIONUPDATE"]);
+		// update the permissions
+		return ctx.db.mutation.updateUser(
+			{
+				data: {
+					permissions: {
+						set: args.permissions,
+					},
+				},
+				where: {
+					id: args.userId,
+				},
+			},
+			info
+		);
 	},
 };
 
