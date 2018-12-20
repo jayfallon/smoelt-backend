@@ -1,6 +1,8 @@
-endpoint: ${env:PRISMA_ENDPOINT}
+#endpoint: ${env:PRISMA_ENDPOINT}
+#endpoint: https://smoelt-production-68644c97d8.herokuapp.com/backend/prod
+endpoint: https://smoelt-production-68644c97d8.herokuapp.com/smoelt-prod/prod
 datamodel: datamodel.prisma
-# secret: ${env:PRISMA_SECRET}
+secret: ${env:PRISMA_SECRET}
 hooks:
-  post-deploy:
-    - graphql get-schema -p prisma
+    post-deploy:
+        - graphql get-schema -p prisma
