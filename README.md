@@ -20,17 +20,25 @@ Once you have Node.js installed on your machine, create a folder for the applica
 
 `mkdir smoelt && cd smoelt`
 
+#### Clone
+
 Next, clone the application:
 
 `git clone https://github.com/jayfallon/smoelt-backend.git`
 
 The repository is private but I have added you as a collaborator and you have access to the repository. If you are unable to clone the repository, please let me know and I will figure out another method to facilitate installation.
 
+#### Install
+
 Once the repository has been cloned, you will need to install the Node modules from the root folder of the Backend repository:
 
 `cd smoelt-backend && npm install`
 
-This should take no more than a moment and you may get some warnings about packages, but once installed you'll be able to run the server using the following command:
+This should take no more than a moment and you may get some warnings about packages but I've completed a package audit as of 12/29/18 and the server work fine.
+
+#### Run
+
+Once installed all of the node modules, you'll be able to run the server in a dev environment using the following command:
 
 `npm run dev`
 
@@ -46,6 +54,38 @@ For help, see: https://nodejs.org/en/docs/inspector
 Server is now running on port http:/localhost:4444
 ```
 
-If this is the case, your yoga-graphql server is now running on port 4444 and you can proceed to install the [Smoelt Frontend](https://github.com/jayfallon/smoelt-frontend).
+#### Check
+
+If this is the case, your yoga-graphql server is now running on port 4444. To check if this is correct, please go to [http://localhost:4444/](http://localhost:4444/) in your browser where you should see the GraphiQL interface.
+
+In the left pane, you can run the following command to see all of the items currently listed in the database:
+
+```
+query {
+  items {
+    id
+    title
+  }
+}
+```
+
+This should produce a long list of items with the following output as a shortened example:
+
+```
+{
+  "data": {
+    "items": [
+      {
+        "id": "cjpy2umntbvzi0a49nyf7kbd2",
+        "title": "Movie Night"
+      }
+    ]
+  }
+}
+```
+
+#### Install the Smoelt Frontend
+
+Once your server is up and running, you can proceed to install the [Smoelt Frontend](https://github.com/jayfallon/smoelt-frontend).
 
 If this is not case and you are not having any luck, please let me know and I will provide a fix.
