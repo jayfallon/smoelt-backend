@@ -1,6 +1,6 @@
 # Smoelt Backend
 
-This repository works together with the [Smoelt Frontend](https://github.com/jayfallon/smoelt-frontend) to serve as the backend server. It runs a [graphql-yoga](https://github.com/prisma/graphql-yoga) server over [Nodemon](https://nodemon.io/) on your localhost which talsk to a [Prisma](https://www.prisma.io/) service connected to a remotely hosted MySql database.
+This repository works together with the [Smoelt Frontend](https://github.com/jayfallon/smoelt-frontend) to serve as the backend server. It runs a [graphql-yoga](https://github.com/prisma/graphql-yoga) server over [Nodemon](https://nodemon.io/) on your localhost which talks to a [Prisma](https://www.prisma.io/) service connected to a remotely hosted MySql database.
 
 In order to connect the service, you will need the `variables.env` file located in the root folder of the repository. Normally, this file would not be included but for presentation purposes I have done so.
 
