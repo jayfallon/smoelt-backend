@@ -99,3 +99,7 @@ This should produce a long list of items with the following output as a shortene
 Once your server is up and running, you can proceed to install the [Smoelt Frontend](https://github.com/jayfallon/smoelt-frontend).
 
 If this is not case and you are not having any luck, please let me know and I will provide a fix.
+
+### Turn the server off
+
+To turn the server off, you just need to type `ctrl-c` in the terminal window where the server is running.
