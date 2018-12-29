@@ -35,3 +35,17 @@ This should take no more than a moment and you may get some warnings about packa
 `npm run dev`
 
 and the output on your terminal should read:
+
+```
+[nodemon] 1.18.7
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching: *.*
+[nodemon] starting `node --inspect src/index.js`
+Debugger listening on ws://127.0.0.1:9229/0fc55924-550d-47dc-ae92-5b70ec3e27c8
+For help, see: https://nodejs.org/en/docs/inspector
+Server is now running on port http:/localhost:4444
+```
+
+If this is the case, your yoga-graphql server is now running on port 4444 and you can proceed to install the [Smoelt Frontend](https://github.com/jayfallon/smoelt-frontend).
+
+If this is not case and you are not having any luck, please let me know and I will provide a fix.
