@@ -10,6 +10,16 @@ Currently, there is an issue with the [Apollo Client](https://www.apollographql.
 
 In order to install and run the server, you will need to have [Node.js](https://nodejs.org/en/download/) installed on your local machine.
 
+#### Check Node.js
+
+To see if Node.js is already installed on your machine, enter the following command in your terminal window:
+
+`node --version`
+
+if it responds with something like: `v10.11.0`, then you are good to proceed without installing Node, otherwise you will need to install it.
+
+#### Install Node.js
+
 Node.js can be installed on machines running macOS, Windows or Linux, along with other platforms, and the preferred method is installing the current LTS version via the appropriate platform installer.
 
 You will also need to have Git installed on your machine and a GitHub account, but I'm assuming that is already the case.
